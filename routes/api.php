@@ -20,3 +20,5 @@ Route::apiResources([
     'sellers' => SellerController::class,
     'orders' => OrderController::class,
 ]);
+
+Route::get('/sellers/{seller}/orders', [SellerController::class, 'showOrders']);
