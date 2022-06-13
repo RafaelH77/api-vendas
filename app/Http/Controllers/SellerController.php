@@ -25,7 +25,7 @@ class SellerController extends Controller
         return new Response(
             DB::table('sellers')
                 ->leftJoin('orders', 'sellers.id', '=', 'orders.seller_id')
-                ->select('sellers.id', 'sellers.name', 'sellers.email', DB::raw('TRUNCATE(SUM(orders.value)/100*8.5, 2) as commission'))
+                ->select('sellers.id', 'sellers.name', 'sellers.email', DB::raw('ROUND(SUM(orders.commission), 2) as commission'))
                 ->groupBy('sellers.id')
                 ->get(), 200
         );
@@ -62,7 +62,7 @@ class SellerController extends Controller
     }
 
     /**
-     * Mostra todas as vendas do vendedor
+     * Mostrar todas as vendas do vendedor
      *
      *   * @OA\Get(
      *     tags={"/seller"},
@@ -83,8 +83,8 @@ class SellerController extends Controller
     {
         return new Response(
             DB::table('sellers')
-                ->leftJoin('orders', 'sellers.id', '=', 'orders.seller_id')
-                ->select('sellers.id', 'sellers.name', 'sellers.email', DB::raw('TRUNCATE(orders.value/100*8.5, 2) as commission'),
+                ->join('orders', 'sellers.id', '=', 'orders.seller_id')
+                ->select('orders.id', 'sellers.name', 'sellers.email', DB::raw('ROUND(orders.commission, 2) as commission'),
                     'orders.value', 'orders.created_at')
                 ->where('sellers.id', '=', $id)
                 ->get(), 200

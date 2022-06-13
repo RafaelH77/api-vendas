@@ -12,5 +12,7 @@ class Order extends Model
     protected $fillable = [
         'seller_id',
         'value',
+        'commission',
     ];
+
 }

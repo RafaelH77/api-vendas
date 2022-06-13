@@ -22,3 +22,5 @@ Route::apiResources([
 ]);
 
 Route::get('/sellers/{seller}/orders', [SellerController::class, 'showOrders']);
+Route::get('/orders/total/{date}', [OrderController::class, 'showTotalOrders']);
+

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('seller_id')->constrained('sellers');
             $table->float('value');
+            $table->float('commission');
             $table->timestamps();
         });
     }

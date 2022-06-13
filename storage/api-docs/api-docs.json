@@ -10,6 +10,63 @@
         }
     ],
     "paths": {
+        "/orders": {
+            "post": {
+                "tags": [
+                    "/order"
+                ],
+                "summary": "Criar Venda",
+                "operationId": "445bab4f7dc9ea6fcd54f286c0209478",
+                "parameters": [
+                    {
+                        "name": "seller_id",
+                        "in": "query",
+                        "style": "form",
+                        "schema": {
+                            "type": "bigint"
+                        }
+                    },
+                    {
+                        "name": "value",
+                        "in": "query",
+                        "style": "form",
+                        "schema": {
+                            "type": "float"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    }
+                }
+            }
+        },
+        "/orders/total/{date}": {
+            "get": {
+                "tags": [
+                    "/order"
+                ],
+                "summary": "Mostrar o total de vendas do dia",
+                "operationId": "91de3d44c6d1bb939c69523fbf2d739b",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "in": "path",
+                        "style": "form",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "13-06-2022"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso"
+                    }
+                }
+            }
+        },
         "/sellers": {
             "get": {
                 "tags": [
@@ -59,7 +116,7 @@
                 "tags": [
                     "/seller"
                 ],
-                "summary": "Mostra todas as vendas do vendedor",
+                "summary": "Mostrar todas as vendas do vendedor",
                 "operationId": "e9e4ca1bc19fa2b6c669f0bbf1198369",
                 "parameters": [
                     {
