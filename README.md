@@ -1,4 +1,4 @@
-REQUISITOS: Git, Composer, Mysql 8.0.29, PHP 8.0.19, Extensões do PHP (pdo_mysql)
+REQUISITOS: Laravel, Composer, Mysql 8.0.29, PHP 8.0.19, Extensões do PHP (pdo_mysql)
 
 
 CONFIGURAÇÃO DO AMBIENTE:
