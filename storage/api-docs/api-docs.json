@@ -15,7 +15,7 @@
                 "tags": [
                     "/order"
                 ],
-                "summary": "Criar Venda",
+                "summary": "Criar venda",
                 "operationId": "445bab4f7dc9ea6fcd54f286c0209478",
                 "parameters": [
                     {
