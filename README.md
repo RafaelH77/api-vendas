@@ -22,4 +22,4 @@ E depois subir o server com: "php artisan serve"
 
 TESTE:
 
-Abrir o navegador no endereço que o servidor subiu, irá abri o swagger para testar a API
+Abrir o navegador no endereço que o servidor subiu, irá abrir o swagger para testar a API
